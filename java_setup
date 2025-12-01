@@ -1,0 +1,101 @@
+To download java get this url
+https://www.oracle.com/in/java/technologies/downloads/
+ 
+ 
+for mac -- you download ARM64 DMG Installer
+once download 
+you can click on that app folder in download and get installed
+  
+step 1:verify java version
+To confirm  - take terminal 
+rrahul@RRAHULs-MacBook-Air ~ % /usr/libexec/java_home -v
+java_home: option requires an argument -- v
+/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home
+rrahul@RRAHULs-MacBook-Air ~ % 
+
+Thus java jdk 25 is installed
+
+step 2 ; check for zhrc
+rrahul@RRAHULs-MacBook-Air ~ % pwd
+/Users/rrahul
+rrahul@RRAHULs-MacBook-Air ~ % ls -all
+total 232
+-rwxrwxrwx   1 rrahul  staff  33771 13 Oct 10:04 .zsh_history
+drwxrwxrwx   8 rrahul  staff    256 19 Nov 19:57 .zsh_sessions
+-rwxrwxrwx   1 rrahul  staff    492  6 Aug 14:04 .zshrc
+drwxrwxrwx@ 21 rrahul  staff    672 19 Nov 19:54 Desktop
+drwxrwxrwx@  8 rrahul  staff    256 19 Nov 19:59 Documents
+drwxrwxrwx  15 rrahul  staff    480 12 Aug 22:37 terraform-for-devops
+rrahul@RRAHULs-MacBook-Air ~ % 
+if zshrc not found then create this command like
+touch zshrc - and open it with nano
+it will get created
+
+rrahul@RRAHULs-MacBook-Air ~ % java --version
+java 25.0.1 2025-10-21 LTS
+Java(TM) SE Runtime Environment (build 25.0.1+8-LTS-27)
+Java HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)
+step 3 - verify with hello world
+rrahul@RRAHULs-MacBook-Air ~ % 
+create new java file
+rrahul@RRAHULs-MacBook-Air ~ % ls
+Desktop Music
+Documents Pictures
+Downloads Python
+Langchain retail-store-sample-app-main
+Library Terraform_practice
+mcp terraform-for-devops
+Movies
+rrahul@RRAHULs-MacBook-Air ~ % cd Documents
+rrahul@RRAHULs-MacBook-Air Documents % mkdir javademo
+rrahul@RRAHULs-MacBook-Air Documents % ls
+Harness.docx javademo
+java_eclipse_setup.docx Tenorshare 4DDiG
+rrahul@RRAHULs-MacBook-Air Documents % cd javademo
+rrahul@RRAHULs-MacBook-Air javademo % touch HelloWorld.java
+rrahul@RRAHULs-MacBook-Air javademo % ls
+hello.java
+rrahul@RRAHULs-MacBook-Air javademo % 
+open it with text edit and save ,hello.java and paste this prog
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+rrahul@RRAHULs-MacBook-Air javademo % javac HelloWorld.java
+rrahul@RRAHULs-MacBook-Air javademo % 
+ 
+once after creating the class you run like this
+rrahul@RRAHULs-MacBook-Air javademo % java HelloWorld
+Hello, World!
+rrahul@RRAHULs-MacBook-Air javademo % 
+
+
+
+
+List of isntallation in bdev lab
+java installed in bdev lab
+C:\Users\WA62XEA>java -version
+java version "25.0.1" 2025-10-21 LTS
+Java(TM) SE Runtime Environment (build 25.0.1+8-LTS-27)
+Java HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)
+
+to check wsl 
+C:\Users\WA62XEA>wsl --list --verbose
+
+Copyright (c) Microsoft Corporation. All rights reserved.
+
+Usage: wsl.exe [Argument]
+C:\Users\WA62XEA>whoami
+bdevlab\wa62xea
+ 
+no git
+no intellj
+no eclipse
+no ubuntu/linux
+no vs code editor
+
+
+
+
