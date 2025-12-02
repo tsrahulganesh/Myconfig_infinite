@@ -1,9 +1,1 @@
-To Drop in git hub repo:
 
-cd ~/Documents/vscodeproj/myseleproj
-git init
-git remote add origin https://github.com/<username>/<repo>.git
-git add .
-git commit -m "Initial commit
-git branch -M main
-git push -u origin main
