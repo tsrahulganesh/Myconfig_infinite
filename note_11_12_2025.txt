@@ -1,0 +1,123 @@
+css===>#M_layout_content_PCDZ_MMCA7G7_ctl00_webInputForm_cmdContinue
+
+id-->//input[@id='M_layout_content_PCDZ_MMCA7G7_ctl00_webInputForm_cmdContinue']
+
+class->//input[@class='form-control component-group'
+class -->//input[@class='signin-password'
+class --->//input[@class='btn btn-primary'
+Advanced User Search
+
+//input[@id='M_layout_content_PCDZ_MW2NO7V_ctl00_webInputForm_cmdContinue']
+M$layout$content$PCDZ$MW2NO7V$ctl00$webInputForm$txtLoginName
+
+
+M$layout$content$PCDZ$MW2NO7V$ctl00$webInputForm$txtPassword
+btn btn-primary
+
+There are three main issues
+1.To work in Fiserv environment, javac is needed not only java.
+javac denotes to work for flexible libraries like when you install plugins and reload them , it reaches 
+maven central repository.but due to restriction ,it asks for TLS certificate or any proxy set up for maven
+
+2.In harness supports for jdk 11 not supporting for jdk 17 or 21 or 25 ,and Fiserv laptop jdk 25,hence 
+we cant test the code before running into pipeline ,like mvn test or run mvn clean install and in harness it is by default picks up jdk 11 even though you add jdk install 25 step.
+
+3.Beside that if we proceed with harness default set up and not running or testing the prog in terminal before you run pipeline though taking much time ,--another problem is harness supports for unit and tesng but for general domains which dont have much restriction,here it is restricted for banking domain ,because of banking domain the credential locators are in generating dynamic expressions on every login for all the type of locators
+like name, id , css, class.
+hence after entring into url , it stays in sighn in page.
+4.
+
+
+
+sub :I wanted to highlight a few key issues we are facing while working in the Fiserv environment:
+After spending two weeks on harness from testing perspective,i have come to conclude that the recent version of harness cloud tool does not support testing for banking domain.
+Kindly go through the points where we lag or rather harness recent version lag.
+on primary level,harness compatable only for build depoloyements and for unit testing on general domains,which just began in industry,there are no material or video found in social platforms to refer.
+
+After spending two weeks evaluating Harness from a testing perspective, I have concluded that the recent version of the Harness Cloud tool does not fully support testing for the banking domain.
+Here are the key areas where the current version falls short:
+
+Limited Testing Support: At a primary level, Harness is compatible mainly for build deployments and basic unit testing in general domains.
+Lack of Advanced Testing Features: Features required for domain-specific testing, especially in banking, are missing or underdeveloped.
+Insufficient Learning Resources: There is a noticeable lack of materials or videos or in devops community on social platforms to guide users on testing capabilities in Harness.
+
+Currently, the tool seems to focus primarily on deployment automation, while testing support is still in its early stages within the industry.
+
+Java Compiler Requirement (javac):
+To work effectively in the Fiserv environment, we need javac in addition to java. This is essential for compiling flexible libraries, especially when installing plugins and reloading them. Currently, due to restrictions, Maven attempts to reach the central repository but fails because it requires a TLS certificate or proxy setup for this org.
+
+
+JDK Version Compatibility in Harness:
+Harness currently supports JDK 11 by default, but does not support JDK 17, 21, or 25. Our Fiserv laptops are configured with JDK 25, which creates a mismatch. As a result, we cannot test the code locally using commands like mvn test or mvn clean install before running the pipeline. Even if we add a JDK 25 installation step in Harness, it still defaults to JDK 11.
+
+
+Testing and Domain Restrictions:
+If we proceed with the default Harness setup without local testing, the pipeline execution takes significantly longer. Additionally, while Harness supports unit tests and TestNG, the banking domain introduces extra restrictions. For example, credential locators generate dynamic expressions for all locator types (name, ID, CSS, class) on every login. This causes the automation to stall at the sign-in page after navigating to the URL.
+
+------------------------------------------------------------------------------------------------
+Subject: Observations on Harness Cloud Tool – Testing Limitations for Banking Domain
+
+Dear Santosh,
+
+After spending two weeks evaluating the Harness Cloud tool from a testing perspective, I have identified several limitations that impact its suitability for the banking domain. Please find the key observations below:
+
+Key Gaps Identified
+
+1.Limited Testing Support from harness
+
+Harness is primarily designed for build deployments and basic unit testing in general domains.
+Advanced testing capabilities required for banking applications are either missing or underdeveloped.
+
+2.Insufficient Learning Resources
+
+There is a noticeable lack of documentation, tutorials, or community content (including DevOps forums and social platforms) on testing capabilities in Harness.
+
+
+3.Java Compiler Requirement (javac)
+
+For effective integration in the Fiserv environment, javac is required in addition to java for compiling libraries and managing plugins.
+Current restrictions cause Maven to fail when reaching the central repository due to TLS certificate or proxy setup issues.
+
+service now id : INC019968960 --- Cannot solve as zscaler blocking to use central maven repo
+
+Error in java compiler:
+Could not transfer artifact org.seleniumhq.selenium:selenium-java:pom:4.26.0 from/to central (https://repo.maven.apache.org/maven2): status code: 403, reason phrase: Forbidden (403)  --- fiserv is not allowing the maven traffic , due to which i can do java program. actually this is happening from first ,in personal laptop i dont find this issues, as fiserv is restricted . is there any proxy set up in this corporate. ---  please find the what copilat says --->
+The 403 Forbidden from Maven Central means your machine is not allowed to fetch directly from https://repo.maven.apache.org/maven2. This is common on enterprise networks (bank environments) that block direct Maven Central traffic and require you to go through a corporate proxy or an internal repository mirror (Nexus/Artifactory). Because the fetch failed, your IDE can’t attach Selenium/JUnit, so everything stays red and Run is disabled.
+
+4.JDK Version Compatibility
+
+Harness defaults to JDK 11 and does not support JDK 17, 21, or 25.
+Fiserv laptops use JDK 25, creating a mismatch and preventing local testing with commands like mvn test or mvn clean install.
+Even adding JDK 25 in Harness still defaults to JDK 11.
+
+
+5.Testing and Domain Restrictions
+
+Without local testing, pipeline execution becomes significantly slower.
+While Harness supports unit tests and TestNG, banking domain introduces additional restrictions:
+
+Credential locators generate dynamic expressions for all locator types (name, ID, CSS, class) on every login.
+This causes automation to stall at the sign-in page after navigating to the URL.
+
+Error in Harness:
+//input[@id='M_layout_content_PCDZ_MW2NO7V_ctl00_webInputForm_cmdContinue']
+id-->//input[@id='M_layout_content_PCDZ_MMCA7G7_ctl00_webInputForm_cmdContinue']
+
+M$layout$content$PCDZ$MW2NO7V$ctl00$webInputForm$txtLoginName
+normal css selector -->  input[id$='txtLoginName'                       
+M$layout$content$PCDZ$MW2NO7V$ctl00$webInputForm$txtPassword
+normal css selector -->  input[id$='txtPassword'
+submit button --> css -->btn.btn-primary
+
+
+
+
+
+
+
+
+
+
+
+
+
