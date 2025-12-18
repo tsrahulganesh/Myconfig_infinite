@@ -25,7 +25,6 @@ we cant test the code before running into pipeline ,like mvn test or run mvn cle
 3.Beside that if we proceed with harness default set up and not running or testing the prog in terminal before you run pipeline though taking much time ,--another problem is harness supports for unit and tesng but for general domains which dont have much restriction,here it is restricted for banking domain ,because of banking domain the credential locators are in generating dynamic expressions on every login for all the type of locators
 like name, id , css, class.
 hence after entring into url , it stays in sighn in page.
-4.
 
 
 
@@ -54,23 +53,25 @@ Harness currently supports JDK 11 by default, but does not support JDK 17, 21, o
 Testing and Domain Restrictions:
 If we proceed with the default Harness setup without local testing, the pipeline execution takes significantly longer. Additionally, while Harness supports unit tests and TestNG, the banking domain introduces extra restrictions. For example, credential locators generate dynamic expressions for all locator types (name, ID, CSS, class) on every login. This causes the automation to stall at the sign-in page after navigating to the URL.
 
-------------------------------------------------------------------------------------------------
+-----
 Subject: Observations on Harness Cloud Tool – Testing Limitations for Banking Domain
-
-Dear Santosh,
-
+Dear [Recipient's Name],
 After spending two weeks evaluating the Harness Cloud tool from a testing perspective, I have identified several limitations that impact its suitability for the banking domain. Please find the key observations below:
 
 Key Gaps Identified
 
-1.Limited Testing Support from harness
+
+1.Limited Testing Support
 
 Harness is primarily designed for build deployments and basic unit testing in general domains.
 Advanced testing capabilities required for banking applications are either missing or underdeveloped.
 
+
+
 2.Insufficient Learning Resources
 
 There is a noticeable lack of documentation, tutorials, or community content (including DevOps forums and social platforms) on testing capabilities in Harness.
+
 
 
 3.Java Compiler Requirement (javac)
@@ -78,17 +79,14 @@ There is a noticeable lack of documentation, tutorials, or community content (in
 For effective integration in the Fiserv environment, javac is required in addition to java for compiling libraries and managing plugins.
 Current restrictions cause Maven to fail when reaching the central repository due to TLS certificate or proxy setup issues.
 
-service now id : INC019968960 --- Cannot solve as zscaler blocking to use central maven repo
 
-Error in java compiler:
-Could not transfer artifact org.seleniumhq.selenium:selenium-java:pom:4.26.0 from/to central (https://repo.maven.apache.org/maven2): status code: 403, reason phrase: Forbidden (403)  --- fiserv is not allowing the maven traffic , due to which i can do java program. actually this is happening from first ,in personal laptop i dont find this issues, as fiserv is restricted . is there any proxy set up in this corporate. ---  please find the what copilat says --->
-The 403 Forbidden from Maven Central means your machine is not allowed to fetch directly from https://repo.maven.apache.org/maven2. This is common on enterprise networks (bank environments) that block direct Maven Central traffic and require you to go through a corporate proxy or an internal repository mirror (Nexus/Artifactory). Because the fetch failed, your IDE can’t attach Selenium/JUnit, so everything stays red and Run is disabled.
 
 4.JDK Version Compatibility
 
 Harness defaults to JDK 11 and does not support JDK 17, 21, or 25.
 Fiserv laptops use JDK 25, creating a mismatch and preventing local testing with commands like mvn test or mvn clean install.
 Even adding JDK 25 in Harness still defaults to JDK 11.
+
 
 
 5.Testing and Domain Restrictions
@@ -99,25 +97,9 @@ While Harness supports unit tests and TestNG, banking domain introduces addition
 Credential locators generate dynamic expressions for all locator types (name, ID, CSS, class) on every login.
 This causes automation to stall at the sign-in page after navigating to the URL.
 
-Error in Harness:
+
 //input[@id='M_layout_content_PCDZ_MW2NO7V_ctl00_webInputForm_cmdContinue']
 id-->//input[@id='M_layout_content_PCDZ_MMCA7G7_ctl00_webInputForm_cmdContinue']
 
 M$layout$content$PCDZ$MW2NO7V$ctl00$webInputForm$txtLoginName
-normal css selector -->  input[id$='txtLoginName'                       
 M$layout$content$PCDZ$MW2NO7V$ctl00$webInputForm$txtPassword
-normal css selector -->  input[id$='txtPassword'
-submit button --> css -->btn.btn-primary
-
-
-
-
-
-
-
-
-
-
-
-
-

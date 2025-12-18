@@ -1,0 +1,28 @@
+$ gh auth status
+$ gh auth login
+$ gh repo list
+$ gh repo create auto-demo-round3 --public --description "Myautodemo"
+$ gh repo view tsrahulganesh/auto-demo-round3
+
+$ git remote -v
+$ git remote add origin https://github.com/tsrahulganesh/auto-demo-round3.git
+$ git remote remove origin (when go worng)
+$ git remote set-url origin //https:github.com/tsrahulganesh/auto-demo-round3.git
+$ git remote -v
+$ git ls-remote origin
+$ ssh -T git@github.com
+$ git rev-parse --show-toplevel
+$ git status
+$ git branch -vv
+$ git log --oneline --graph --decorate --all |head -n 20
+$ git diff origin/main
+$ git reset --hard origin/main
+$ git stash untracked files (to hide untracked/uncommited files)
+
+$ git init
+$ git add .
+$ git commit -m "invalid"
+$ git branch -m master main
+$ git pull --rebase origin main
+$ git push origin main
+$ git fetch origin main
